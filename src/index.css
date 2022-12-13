@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-wpPrimary;
+  }
+}
+
+@layer components {
+  .tabPanel {
+    @apply grid max-w-5xl grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3;
+  }
+}
