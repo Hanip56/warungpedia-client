@@ -1,7 +1,5 @@
 import React from "react";
 import { HiChevronDown, HiChevronUp } from "react-icons/hi";
-import Currency from "react-currency-formatter";
-import toast from "react-hot-toast";
 import { useStateContext } from "../contexts/CartProvider";
 import { BASE_URL } from "../constants";
 
@@ -47,7 +45,7 @@ const CheckoutProduct = ({ items, amount }) => {
         </div>
         <div className="flex flex-col items-end space-y-4">
           <h4 className="text-xl font-semibold lg:text-2xl">
-            <Currency quantity={items.price * amount} currency="USD" />
+            {items.price * amount}$
           </h4>
           <button
             onClick={handleRemove}

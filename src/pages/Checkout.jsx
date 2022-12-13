@@ -1,7 +1,6 @@
 import React from "react";
 import { useStateContext } from "../contexts/CartProvider";
 import { useNavigate } from "react-router-dom";
-import Currency from "react-currency-formatter";
 import { HiChevronDown } from "react-icons/hi";
 import CheckoutProduct from "../components/CheckoutProduct";
 import { BASE_URL } from "../constants";
@@ -80,14 +79,12 @@ const Checkout = () => {
                   <div className="flex justify-between">
                     <p>subtotal</p>
                     <p>
-                      <Currency
-                        quantity={cart.reduce(
-                          (total, item) =>
-                            total + item.product.price * item.amount,
-                          0
-                        )}
-                        currency="USD"
-                      />
+                      {cart.reduce(
+                        (total, item) =>
+                          total + item.product.price * item.amount,
+                        0
+                      )}
+                      $
                     </p>
                   </div>
                   <div className="flex justify-between">
@@ -109,14 +106,11 @@ const Checkout = () => {
                 <div className="flex justify-between pt-4 text-xl font-semibold">
                   <h4>Total</h4>
                   <h4>
-                    <Currency
-                      quantity={cart.reduce(
-                        (total, item) =>
-                          total + item.product.price * item.amount,
-                        0
-                      )}
-                      currency="USD"
-                    />
+                    {cart.reduce(
+                      (total, item) => total + item.product.price * item.amount,
+                      0
+                    )}
+                    $
                   </h4>
                 </div>
               </div>
@@ -150,14 +144,12 @@ const Checkout = () => {
                     <h4 className="mb-4 flex flex-col text-xl font-semibold">
                       Pay in full
                       <span>
-                        <Currency
-                          quantity={cart.reduce(
-                            (total, item) =>
-                              total + item.product.price * item.amount,
-                            0
-                          )}
-                          currency="USD"
-                        />
+                        {cart.reduce(
+                          (total, item) =>
+                            total + item.product.price * item.amount,
+                          0
+                        )}
+                        $
                       </span>
                     </h4>
 
