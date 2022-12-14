@@ -8,7 +8,7 @@ const Banner = ({ products }) => {
   const [movementCarousel, setMovementCarousel] = useState(0);
   const [movementSlider, setMovementSlider] = useState(0);
 
-  const productsBanner = products.slice(0, 5);
+  const productsBanner = products.slice(6, 11);
 
   const handleScroll = () => {
     const offset = document.getElementById("shopList");
@@ -22,14 +22,14 @@ const Banner = ({ products }) => {
       <div className="sticky top-0 z-[1] h-screen w-full overflow-hidden  bg-wpBg p-8 pb-12 md:p-8">
         <div className="flex h-full w-full flex-col items-center justify-center gap-y-2 md:gap-y-4">
           <div className="relative w-[100vw] text-center">
-            <h1 className="absolute left-[50%] -top-10 mb-2 -translate-x-[50%] bg-gradient-to-b from-gray-600 to-gray-800 bg-clip-text text-6xl  font-bold tracking-tight text-transparent md:-top-12 md:text-7xl">
+            <h1 className="absolute left-[50%] -top-10 -z-10 mb-2 -translate-x-[50%] bg-gradient-to-b from-gray-600 to-gray-800 bg-clip-text text-6xl  font-bold tracking-tight text-transparent md:-top-12 md:text-7xl">
               {productsBanner[carouselIdx]?.title}
             </h1>
             <h1 className="relative z-10 mb-2 text-4xl font-bold tracking-wider md:text-5xl">
               {productsBanner[carouselIdx]?.title}
             </h1>
-            <p className="text-sm text-gray-500">
-              made by fish, salt and japanese rice
+            <p className="z-50 mx-auto max-w-xs text-center text-sm text-gray-500 md:max-w-full">
+              {productsBanner[carouselIdx]?.description}
             </p>
           </div>
 
@@ -38,7 +38,7 @@ const Banner = ({ products }) => {
             className={`flex max-w-3xl justify-center gap-x-24 overflow-hidden py-2`}
           >
             <div
-              className="flex transition-all duration-300 ease-in-out"
+              className="my-4 flex transition-all duration-300 ease-in-out"
               style={{ transform: `translateX(${movementCarousel}rem)` }}
             >
               {productsBanner.map((product, idx) => (
@@ -49,8 +49,8 @@ const Banner = ({ products }) => {
                   <div
                     className={`${
                       carouselIdx === idx
-                        ? "h-full w-full opacity-100"
-                        : "h-[70%] w-[70%] -translate-y-12 opacity-50"
+                        ? "h-[90%] w-[90%] opacity-100"
+                        : "h-[60%] w-[60%] -translate-y-12 opacity-50"
                     } absolute flex items-center justify-center transition-all duration-300 ease-in-out`}
                   >
                     <img
